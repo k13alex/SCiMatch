@@ -1,4 +1,4 @@
-$overlayBgColor: hsl(0deg 0% 50%);
+$overlayBgColor: rgba(0, 0, 0, 0.6);
 
 .modal {
   position: fixed;
@@ -23,7 +23,8 @@ $overlayBgColor: hsl(0deg 0% 50%);
 
   &__content {
     position: relative;
-    padding: 2rem;
+    border-radius: 2rem;
+    padding: fluid(3rem, 2rem);
     width: 100%;
     max-width: 80rem;
     background-color: var(--clr-default-100);
@@ -34,8 +35,8 @@ $overlayBgColor: hsl(0deg 0% 50%);
 
   &__close {
     position: absolute;
-    right: 0.2rem;
-    top: 0.2rem;
+    right: 2rem;
+    top: 2rem;
     width: 2rem;
     height: 2rem;
 
@@ -68,6 +69,103 @@ $overlayBgColor: hsl(0deg 0% 50%);
       opacity: 1;
       transform: translateY(0);
       transition: transform var(--transition), opacity var(--transition);
+    }
+  }
+
+  &-upload {
+    &__content {
+      padding-bottom: 9rem;
+      min-height: fluid(56rem, 30rem);
+    }
+
+    &__btn {
+      position: absolute;
+      left: 4rem;
+      bottom: 3rem;
+      border-radius: 1.5rem;
+      padding: 1.5rem 4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--clr-text-100);
+      background: linear-gradient(124deg, #a7aed4 0%, #cea7cc 100%);
+    }
+
+    .upload-container {
+      text-align: center;
+    }
+
+    .upload-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .custom-file-upload {
+      position: relative;
+      display: inline-block;
+      border: none;
+      font-size: 1.6rem;
+      color: var(--clr-text-100);
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 100%;
+        display: inline-block;
+        width: 100%;
+        height: 0.1rem;
+        background-color: var(--clr-text-100);
+        opacity: 1;
+        transition: opacity var(--transition);
+      }
+
+      &:hover::after {
+        opacity: 0;
+      }
+    }
+
+    #file-preview {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      gap: 1rem;
+    }
+
+    .preview-item {
+      position: relative;
+      display: inline-block;
+    }
+
+    #file-preview img {
+      border-radius: 1rem;
+      max-width: 20rem;
+      max-height: 20rem;
+      box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    }
+
+    .remove-btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-style: solid;
+      border-width: 0.1rem;
+      border-color: rgba(2, 16, 43, 0.2);
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--clr-default-900);
+      background: #fff;
+      transform: translate(50%, -50%);
+      cursor: pointer;
     }
   }
 }

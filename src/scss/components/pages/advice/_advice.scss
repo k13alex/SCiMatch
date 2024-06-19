@@ -1,0 +1,66 @@
+.advice {
+  padding-block: fluid(10rem, 7rem);
+
+  &__title {
+    margin-inline: auto;
+    max-width: 60rem;
+    font-weight: 400;
+    font-size: fluid(6rem, 3rem);
+    line-height: 120%;
+    text-align: center;
+  }
+
+  &__block {
+    margin-top: 3rem;
+    margin-inline: auto;
+    max-width: 80rem;
+  }
+
+  &__item {
+    border: 0.1rem solid rgba(2, 16, 43, 0.2);
+    border-radius: 2rem;
+    padding: fluid(3rem, 2rem) fluid(3rem, 4rem) fluid(3rem, 2rem)
+      fluid(3rem, 2rem);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15.5px);
+
+    &:not(:first-child) {
+      margin-top: fluid(3rem, 2rem);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: fluid(1.8rem, 1.6rem);
+    line-height: 150%;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+
+  &__copy {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: fluid(1.8rem, 1.6rem);
+    text-transform: uppercase;
+    gap: 0.5rem;
+  }
+
+  &__btn {
+    display: block;
+    margin-top: fluid(3rem, 4rem);
+    border-radius: 1.5rem;
+    padding: 1.5rem 3rem;
+    width: max-content;
+    font-weight: 600;
+    font-size: fluid(1.8rem, 1.6rem);
+    text-transform: uppercase;
+    color: var(--clr-text-100);
+    background: linear-gradient(124deg, #a7aed4 0%, #cea7cc 100%);
+  }
+}

@@ -8,3 +8,164 @@
   height: 1px;
   clip: rect(0 0 0 0);
 }
+
+.section-padding {
+  padding-top: fluid(10rem, 7rem);
+}
+
+.grain {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  display: block;
+}
+
+.DMSerifText {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-family: var(--font-family-DMSerifText);
+  font-size: fluid(9rem, 4rem);
+
+  & > .offer-info__title-svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    transform: translateY(60%);
+  }
+}
+
+.title {
+  display: block;
+  font-weight: 400;
+  font-size: fluid(7rem, 3rem);
+  line-height: 105%;
+
+  .title__svg {
+    top: 80%;
+  }
+  .title__svg.title__svg-top {
+    top: 83%;
+  }
+
+  span {
+    position: relative;
+    font-family: var(--font-family-DMSerifText);
+    font-size: fluid(8rem, 3.5rem);
+    white-space: nowrap;
+  }
+
+  &__svg {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: flex;
+    width: 100%;
+  }
+}
+
+.bg-main {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.z-content {
+  position: relative;
+  z-index: 3;
+}
+
+.bg-ellipce-top {
+  position: absolute;
+
+  &_1 {
+    right: 0;
+    top: 0;
+  }
+
+  &_2 {
+    right: 0;
+    top: 0;
+  }
+
+  &_3 {
+    right: 0;
+    top: 5rem;
+  }
+
+  &_4 {
+    right: 5rem;
+    top: 30rem;
+  }
+}
+
+.bg-main {
+  z-index: 100;
+  opacity: 0.4;
+}
+
+.bg-element-top {
+  user-select: none;
+
+  img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__blanding {
+    mix-blend-mode: overlay;
+  }
+}
+
+.bg-element-left {
+  position: absolute;
+  left: 0;
+  top: 144rem;
+  user-select: none;
+
+  &_quiz {
+    top: -40rem;
+  }
+}
+
+.swiper {
+  .swiper-button-disabled {
+    opacity: 0.4;
+    cursor: auto;
+  }
+}
+
+.fake3,
+.fake {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6.5rem;
+  height: 5.2rem;
+  color: var(--clr-text-100);
+}
+
+.fake4,
+.fake2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  width: 24.4rem;
+  height: 5.2rem;
+  color: var(--clr-text-100);
+}
+
+#nextBtn2,
+#prevBtn2,
+#nextBtn,
+#prevBtn {
+  position: relative;
+}

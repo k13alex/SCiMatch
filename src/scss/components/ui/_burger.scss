@@ -2,14 +2,16 @@ $burgerMQ: em(992);
 
 .burger {
   $width: 2.5rem;
-  $height: 2rem;
+  $height: 1.4rem;
   $bgColor: hsl(0deg 0% 0%);
-  $burgerLineHeight: 0.4rem;
+  $burgerLineHeight: 0.1rem;
 
   display: none;
 
   @media (max-width: $burgerMQ) {
-    position: relative;
+    position: absolute;
+    right: 1rem;
+    top: 4rem;
     z-index: 15;
     display: block;
     width: $width;
@@ -21,36 +23,38 @@ $burgerMQ: em(992);
     span {
       content: "";
       position: absolute;
-      left: 0;
-      width: 100%;
+      right: 0;
       height: $burgerLineHeight;
       background-color: $bgColor;
     }
 
     &::before {
       top: 0;
+      width: 100%;
       transition: transform var(--transition), top var(--transition);
     }
 
     &::after {
       bottom: 0;
+      width: 100%;
       transition: transform var(--transition), bottom var(--transition);
     }
 
     span {
-      top: 0.8rem;
+      top: 0.6rem;
+      width: 75%;
       transition: transform var(--transition);
     }
 
     &--active {
       &::before {
-        top: 0.8rem;
+        top: 0.65rem;
         transform: rotate(45deg);
         transition: transform var(--transition), top var(--transition);
       }
 
       &::after {
-        bottom: 0.8rem;
+        bottom: 0.65rem;
         transform: rotate(-45deg);
         transition: transform var(--transition), bottom var(--transition);
       }

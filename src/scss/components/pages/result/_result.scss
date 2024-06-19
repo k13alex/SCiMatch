@@ -1,0 +1,247 @@
+.relust {
+  padding-block: fluid(10rem, 7rem);
+
+  &__wrapper {
+    margin-inline: auto;
+    max-width: 83rem;
+  }
+
+  &__title {
+    font-size: fluid(6rem, 3rem);
+    text-align: center;
+  }
+
+  &-progress {
+    margin-top: fluid(6rem, 4rem);
+    margin-inline: auto;
+    width: max-content;
+
+    &__photo {
+      position: relative;
+      display: flex;
+      width: fluid(20rem, 14rem);
+
+      img {
+        position: relative;
+        z-index: 3;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 2;
+        display: block;
+        border-radius: 100%;
+        width: fluid(21.5rem, 15.3rem);
+        height: fluid(21.5rem, 15.3rem);
+        background-color: #000;
+        opacity: 0.1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &__loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 2;
+      border: fluid(1rem, 0.7rem) solid #00b327;
+      border-radius: 50%;
+      width: fluid(21.5rem, 15.3rem);
+      transform: translate(-50%, -50%);
+      animation: circleMaker 2s linear alternate;
+      aspect-ratio: 1;
+    }
+
+    &__percents {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 4;
+      font-weight: 600;
+      font-size: fluid(4.8rem, 3rem);
+      text-transform: uppercase;
+      color: var(--clr-default-100);
+      transform: translate(-50%, -50%);
+    }
+
+    &__text {
+      margin-top: fluid(3rem, 2rem);
+      font-weight: 600;
+      font-size: fluid(2.4rem, 1.6rem);
+      text-align: center;
+      color: #00b327;
+    }
+  }
+
+  &__text {
+    margin-top: 3rem;
+    border: 1px solid rgba(2, 16, 43, 0.2);
+    border-radius: 2rem;
+    padding: fluid(3rem, 2rem);
+    font-size: fluid(1.8rem, 1.6rem);
+    line-height: 150%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(1.55rem);
+  }
+
+  &__btn {
+    margin-top: fluid(3rem, 4rem);
+    border-radius: 1.5rem;
+    padding: 1.5rem 3rem;
+    width: max-content;
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    background: linear-gradient(124deg, #a7aed4 0%, #cea7cc 100%);
+  }
+}
+
+@keyframes circleMaker {
+  0% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0
+    );
+  }
+  12.5% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 0
+    );
+  }
+  25% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 0,
+      100% 50%
+    );
+  }
+  37.5% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 0,
+      100% 48%,
+      100% 100%,
+      100% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 0,
+      100% 51%,
+      100% 100%,
+      100% 100%,
+      50% 100%
+    );
+  }
+  62.5% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 52%,
+      100% 100%,
+      100% 100%,
+      0 100%,
+      0 100%
+    );
+  }
+  75% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 52%,
+      100% 100%,
+      0 100%,
+      0 100%,
+      0 50%
+    );
+  }
+  87.5% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 52%,
+      100% 100%,
+      0 100%,
+      0 0,
+      0 0
+    );
+  }
+  100% {
+    clip-path: polygon(
+      50% 50%,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      50% 0,
+      100% 0,
+      100% 52%,
+      100% 100%,
+      0 100%,
+      0 0,
+      50% 0
+    );
+  }
+}

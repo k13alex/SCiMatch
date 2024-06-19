@@ -10,3 +10,7 @@ export * from "./mobile-check";
 export * from "./modal";
 export * from "./tabs";
 export * from "./validate-forms";
+export * from "./quiz";
+export * from "./swiper";
+export * from "./offerAnimations";
+export * from "./uploadFilesModal";

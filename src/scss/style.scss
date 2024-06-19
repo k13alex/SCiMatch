@@ -23,7 +23,9 @@ $containerWidth: 120rem;
 
 :root {
   // base
-  --font-family: "", sans-serif;
+  --font-family: "Manrope", sans-serif;
+  --font-family-DMSerifText: "DMSerifText", sans-serif;
+
   --font-weight: 400;
   --content-width: 117rem;
   --container-offset: 1.5rem;
@@ -34,14 +36,24 @@ $containerWidth: 120rem;
   --clr-default-100: #fff;
   --clr-default-400: #181818;
   --clr-default-900: #000;
+
+  --clr-primary-100: #8eb1f7;
+
+  --clr-bg-100: #f2f1ff;
+
+  --clr-text-100: #02102b;
 }
 
 // </ПЕРЕМЕННЫЕ>==============================================================
 
 // <ОБОЛОЧКИ>================================================================
 body {
+  position: relative;
+  overflow: visible;
   font-size: 1.6rem;
-  color: var(--clr-default-400);
+  color: var(--clr-text-100);
+
+  background-color: var(--clr-bg-100);
 
   &.lock {
     position: fixed;
@@ -52,15 +64,46 @@ body {
     height: 100vh;
     overscroll-behavior: none;
   }
+
+  /* scroll bar */
+  &::-webkit-scrollbar {
+    width: 0.7rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.2rem;
+    background-color: var(--clr-primary-100);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--clr-default-100);
+  }
 }
 
 .wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   width: 100%;
   min-width: 32rem;
   min-height: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/noise.png");
+    background-position: 50%;
+    background-size: 100% 100%;
+    opacity: 0.2;
+  }
 
   &::before {
     content: "";
@@ -97,6 +140,10 @@ main {
   max-width: var(--container-width);
 }
 
+// Libs
+
+@import "./libs/swiper";
+
 // Components - UI
 @import "./ui";
 
@@ -112,11 +159,23 @@ main {
 // Components - Common
 @import "./components/common/header";
 @import "./components/common/footer";
+@import "./components/common/faq";
+@import "./components/common/options";
+@import "./components/common/modal";
 
 // Components - Common
 
 // Components - Pages
-@import "./components/pages/index/hero";
+@import "./components/pages/index/offer";
+@import "./components/pages/index/partners";
+
+@import "./components/pages/quiz/quiz";
+
+@import "./components/pages/advice/advice";
+
+@import "./components/pages/upgrade/upgrade";
+
+@import "./components/pages/result/result";
 
 // Components - Pages
 

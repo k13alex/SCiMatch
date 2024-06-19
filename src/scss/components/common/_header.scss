@@ -1,6 +1,28 @@
 .header {
+  padding-block: fluid(2.1rem, 1.7rem);
+
   &__wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    order: -1;
+    border-radius: 1.6rem;
+    padding: 1.25rem 4rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(124deg, #a7aed4 0%, #cea7cc 100%);
+
+    @media (max-width: em(992)) {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      order: 1;
+      transform: translate(-50%, 160%);
+    }
   }
 }

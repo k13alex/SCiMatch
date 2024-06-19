@@ -1,0 +1,84 @@
+.options {
+  padding-bottom: fluid(7rem, 3rem);
+  &__title {
+    margin-bottom: fluid(3.7rem, 3rem);
+
+    .title__svg {
+      top: 80%;
+    }
+  }
+
+  &__swiper {
+    &-wrapper {
+      position: absolute;
+    }
+  }
+
+  &-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(2, 16, 43, 0.2);
+    border-radius: 2rem;
+    padding: fluid(4rem, 2rem);
+    height: max-content;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15.5px);
+    gap: 1.9rem;
+
+    &__title {
+      max-width: 70%;
+      font-weight: 600;
+      font-size: fluid(3rem, 2rem);
+      line-height: 120%;
+    }
+
+    &__text {
+      max-width: 85%;
+      font-size: fluid(1.8rem, 1.6rem);
+      line-height: 150%;
+    }
+
+    &__more {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      width: max-content;
+      font-size: fluid(1.6rem, 1.4rem);
+      line-height: 150%;
+      color: var(--clr-default-900);
+      background-color: var(--clr-primary-100);
+      gap: 1rem;
+    }
+
+    &__img {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 105%;
+    z-index: 1;
+    display: flex;
+    cursor: pointer;
+
+    &_prev {
+      left: 0;
+    }
+
+    &_next {
+      left: 6rem;
+    }
+  }
+}
+
+.gg-z {
+  position: relative;
+  z-index: 1000;
+}

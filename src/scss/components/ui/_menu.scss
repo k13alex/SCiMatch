@@ -1,11 +1,18 @@
 $burgerMQ: em(992);
 
 .menu {
+  order: -2;
+
+  @media (max-width: $burgerMQ) {
+    z-index: 3;
+  }
+
   &__list {
     display: flex;
     align-items: center;
 
     @media (max-width: $burgerMQ) {
+      position: relative;
       flex-direction: column;
       margin: auto;
       padding-block: 4rem;
@@ -13,8 +20,33 @@ $burgerMQ: em(992);
   }
 
   &__item {
+    a {
+      position: relative;
+      display: inline-block;
+      font-weight: 300;
+      font-size: fluid(2rem, 1.6rem);
+      color: var(--clr-text-100);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        display: inline-block;
+        width: 0;
+        height: 0.1rem;
+        background-color: var(--clr-text-100);
+        transform: translate(-50%, 0.2rem);
+        transition: width var(--transition);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
     &:not(:last-child) {
-      margin-right: 1.5rem;
+      margin-right: 2.5rem;
 
       @media (max-width: $burgerMQ) {
         margin-right: 0;
@@ -33,11 +65,13 @@ $burgerMQ: em(992);
     width: 100%;
     height: 100%;
     max-width: 32rem;
-    background-color: var(--clr-default-900);
+    background-color: var(--clr-default-100);
     transition: right var(--transition);
 
     &--active {
       right: 0;
+      display: flex;
+      flex-direction: column;
       transition: right var(--transition);
     }
   }

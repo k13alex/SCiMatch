@@ -1,34 +1,90 @@
 .faq {
-  &__item {
-    border: 0.15rem solid rgb(245 206 71 / 40%);
-    border-radius: 0.7rem;
-    padding-right: 4.5rem;
-    padding-left: 4.5rem;
-    transition: padding-bottom var(--transition);
+  padding-top: 10rem;
 
-    &-title {
-      position: relative;
-      padding-top: 2.2rem;
-      padding-right: 3.5rem;
-      padding-bottom: 2.2rem;
-      line-height: 135%;
-      cursor: pointer;
+  @media (max-width: em(768)) {
+    padding-top: 8rem;
+  }
 
-      &::before {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 50%;
-        width: 2.8rem;
-        height: 1.4rem;
-        // background-image: url("../img/ui/faq-arrow.svg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transform: translateY(-50%) rotate(0);
-        transition: transform var(--transition);
+  &__layer {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__list {
+    margin-top: fluid(4rem, 3rem);
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: fluid(3rem, 2rem) 10rem fluid(3rem, 2rem) fluid(3rem, 2rem);
+    width: 100%;
+    font-weight: 400;
+    font-size: fluid(3rem, 2rem);
+    line-height: 120%;
+    cursor: pointer;
+    gap: fluid(2rem, 1rem);
+
+    @media (max-width: em(576)) {
+      padding: 2rem 6rem 2rem 2rem;
+    }
+
+    span {
+      font-weight: 800;
+      font-size: fluid(3rem, 2rem);
+      line-height: 120%;
+    }
+  }
+
+  &__open {
+    position: absolute;
+    right: fluid(3rem, 2rem);
+    top: fluid(3rem, 2rem);
+    z-index: -1;
+    border-radius: 100%;
+    width: fluid(4rem, 2.5rem);
+    height: fluid(4rem, 2.5rem);
+    background-color: var(--clr-primary-100);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0.1rem;
+      height: fluid(2rem, 1.25rem);
+      background-color: var(--clr-default-900);
+      transform: translate(-50%, -50%);
+      transition: height var(--transition);
+
+      @media (max-width: em(576)) {
+        right: 3.5rem;
       }
     }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: fluid(2rem, 1.25rem);
+      height: 0.1rem;
+      background-color: var(--clr-default-900);
+      transform: translate(-50%, -50%);
+
+      @media (max-width: em(576)) {
+        right: 2.5rem;
+      }
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    border: 0.1rem solid rgba(2, 16, 43, 0.2);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15.5px);
 
     &-body {
       overflow: hidden;
@@ -36,10 +92,24 @@
       box-sizing: content-box;
       line-height: 160%;
       transition: max-height var(--transition);
+
+      p {
+        margin-top: 0;
+        padding: 0rem fluid(3rem, 2rem) fluid(3rem, 2rem) fluid(3rem, 2rem);
+        font-weight: 400;
+        font-style: normal;
+        font-size: fluid(1.8rem, 1.6rem);
+        line-height: 150%;
+
+        @media (max-width: em(576)) {
+          padding: 2rem;
+        }
+      }
     }
 
     &:not(:last-child) {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
+      transition: margin var(--transition);
 
       @media (max-width: em(767)) {
         margin-bottom: 1.5rem;
@@ -47,13 +117,9 @@
     }
 
     &--active {
-      padding-bottom: 2.5rem;
-      transition: padding-bottom var(--transition);
-
-      .faq__item-title {
+      .faq__open {
         &::before {
-          transform: translateY(-50%) rotate(180deg);
-          transition: transform var(--transition);
+          height: 0;
         }
       }
     }

@@ -73,6 +73,14 @@ export const modals = () => {
     }
   }
 
+  if (document.querySelector(".modal-upload")) {
+    bindModal(
+      ".modal-upload__trigger",
+      ".modal-upload",
+      ".modal-upload__close"
+    );
+  }
+
   // функция для показа модального окна через какое-то определенное время
   function showModalByTime(selector, time) {
     setTimeout(() => {

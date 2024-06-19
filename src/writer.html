@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Profile Writer</title>
+    <meta name="description" lang="ru" content="Описание сайта" />
+
+    @include("html/common/head.html")
+  </head>
+
+  <body>
+    <div class="wrapper" data-overlay="false">
+      @include("html/common/header.html")
+      <main>
+        @include("html/pages/writer/offer-writer.html")
+        @include("html/common/options.html")
+        @include("html/pages/writer/faq-writer.html")
+        @include("html/common/featured-partners.html")
+      </main>
+      @include("html/common/footer.html")
+      @include("html/ui/bg-element-right.html")
+
+      <div class="bg-element-left">
+        <img src="img/bg-element-left.png" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
